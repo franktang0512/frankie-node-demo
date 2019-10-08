@@ -2,10 +2,16 @@
 const Express = require('express');
 const app = Express();
 
+//新增路由 Middleware(next)
+app.get('/', (req, res,next) => {
+    console.log('middleware');
+    next();
+});
 //新增路由
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
+
 
 //監聽
 app.listen(3000, error => {
