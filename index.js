@@ -1,3 +1,8 @@
+if(process.env.NODE_ENV !== 'producton'){
+    require('dotenv').config();
+}
+
+
 //建立Web 服務
 const Express = require('express');
 const app = Express();
@@ -14,7 +19,7 @@ app.get('/', (req, res) => {
 
 
 //監聽
-app.listen(3000, error => {
+app.listen(process.env.PORT, error => {
     if (error) return console.log(error);
     console.log('listen http://localhost:3000');
 });
