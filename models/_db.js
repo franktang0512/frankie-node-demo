@@ -4,7 +4,13 @@ const uri = process.env.DATABASE_URL;
 const db = new Sequelize(uri, {
     dialect: 'postgres',
     dialectOptions: {
-    ssl: true,
+        ssl: true,
     },
-   });
-   module.exports = db;
+    pool: {
+        max: 5,
+        min: 0,
+        acquire: 30000,
+        idle: 10000
+    },
+});
+module.exports = db;
