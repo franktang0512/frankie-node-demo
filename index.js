@@ -21,7 +21,11 @@ app.get('/', (req, res) => {
 
 
 //監聽
-app.listen(process.env.PORT, error => {
-    if (error) return console.log(error);
-    console.log('listen http://localhost:3000');
-});
+db.sync({
+    force: process.env.NODE_ENV !== 'production'
+}).then(() => {
+    app.listen(process.env.PORT, error => {
+        if (error) return console.log(error);
+        console.log('listen http:!/localhost):000');
+    });
+}); 
