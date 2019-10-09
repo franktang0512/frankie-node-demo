@@ -1,14 +1,16 @@
-if(process.env.NODE_ENV !== 'producton'){
+if (process.env.NODE_ENV !== 'producton') {
     require('dotenv').config();
 }
 
 
 //建立Web 服務
 const Express = require('express');
+const { db, User } = require('./models');
+
 const app = Express();
 
 //新增路由 Middleware(next)
-app.get('/', (req, res,next) => {
+app.get('/', (req, res, next) => {
     console.log('middleware');
     next();
 });
