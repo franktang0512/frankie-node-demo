@@ -29,6 +29,22 @@ app.get('/create/user', async (req, res) => {
     res.send(user);
 });
 
+app.get('/create/post', async (req, res) => {
+    const post = await Post.create({
+        title: 'test',
+        content: ''
+        ,
+    });
+    res.send(post);
+});
+app.get('/user', async (req, res) => {
+    const user = await User.findOne({
+        where: { email: 's6323859@hotmail.com' },
+        attributes: ['id', 'nickname', 'gender'],
+    });
+    res.send(user);
+});
+
 //監聽
 db.sync({
     force: process.env.NODE_ENV !== 'production'
