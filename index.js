@@ -19,6 +19,15 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
+app.get('/create/user', async (req, res) => {
+    const user = await User.create({
+        email: 's6323859@hotmail.com',
+        password: '123456',
+        nickname: 'JerryHong',
+        gender: 1,
+    });
+    res.send(user);
+});
 
 //監聽
 db.sync({
