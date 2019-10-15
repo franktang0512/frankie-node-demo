@@ -18,9 +18,13 @@ app.get('/', (req, res, next) => {
     console.log('middleware');
     next();
 });
-//新增路由
-app.get('/', (req, res) => {
-    res.send('Hello World!');
+// //新增路由
+// app.get('/', (req, res) => {
+//     res.send('Hello World!');
+// });
+//加入首頁
+app.get('/', async (req, res) => {
+    res.render('index');
 });
 
 app.get('/create/user', async (req, res) => {
