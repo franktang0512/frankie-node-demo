@@ -9,6 +9,10 @@ const { db, User } = require('./models');
 
 const app = Express();
 
+//設定view engine
+app.set('view engine', 'pug')
+
+
 //新增路由 Middleware(next)
 app.get('/', (req, res, next) => {
     console.log('middleware');
