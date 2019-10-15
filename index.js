@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== 'producton') {
 
 //建立Web 服務
 const Express = require('express');
-const { db, User } = require('./models');
+const { db, User,Post } = require('./models');
 
 const app = Express();
 
