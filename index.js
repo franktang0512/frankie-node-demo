@@ -38,7 +38,7 @@ app.get('/', async function (req, res) {
     const posts = await Post.findAll({
         order: [['createdAt', 'DESC']]
     });
-    res.render('index', { posts });
+    res.render('index',{posts:posts});
 });
 //加入/create/post
 app.post('/create/post', async (req, res) => {
