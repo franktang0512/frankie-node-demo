@@ -51,6 +51,6 @@ db.sync({
 }).then(() => {
     app.listen(process.env.PORT, error => {
         if (error) return console.log(error);
-        console.log('listen http:!/localhost):000');
+        console.log('listen http://localhost:3000');
     });
 }); 
