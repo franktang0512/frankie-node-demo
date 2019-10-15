@@ -40,9 +40,15 @@ app.get('/', async function (req, res) {
     });
     res.render('index', { posts });
 });
+//加入/create/post
+app.post('/create/post', async (req, res) => {
+    const post = await Post.create(req.body);
+    res.redirect('/');
+});
 app.get('/about', function (req, res) {
     res.render('about');
 });
+
 
 app.get('/create/user', async (req, res) => {
     const user = await User.create({
