@@ -9,9 +9,20 @@ const { db, User } = require('./models');
 
 const app = Express();
 
+const helmet = require('helmet');
+const serveStatic = require('serve-static');
+const bodyParser = require('body-parser');
 //設定view engine
 app.set('view engine', 'pug')
 
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(helmet());
+
+const path = require('path');
+const publicPath = path.join(__dirname, 'public');
+app.use(serveStatic(publicPath));
 
 //新增路由 Middleware(next)
 app.get('/', (req, res, next) => {
