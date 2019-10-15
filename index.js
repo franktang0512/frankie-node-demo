@@ -37,6 +37,9 @@ app.get('/', (req, res, next) => {
 app.get('/', async (req, res) => {
     res.render('index');
 });
+app.get('/about',function(req,res){
+    res.render('about');
+});
 
 app.get('/create/user', async (req, res) => {
     const user = await User.create({
