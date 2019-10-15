@@ -34,10 +34,13 @@ app.get('/', (req, res, next) => {
 //     res.send('Hello World!');
 // });
 //加入首頁
-app.get('/', async (req, res) => {
-    res.render('index');
+app.get('/', async function (req, res) {
+    const posts = await Post.findAll({
+        order: [['createdAt', 'DESC']]
+    });
+    res.render('index', { posts });
 });
-app.get('/about',function(req,res){
+app.get('/about', function (req, res) {
     res.render('about');
 });
 
