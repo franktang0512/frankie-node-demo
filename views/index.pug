@@ -15,13 +15,3 @@ block content
                 label(for='content') Message
                 textarea#content.form-control(placeholder='Type in your message', rows='3', name='content')
               button.btn.btn-primary(type='submit') Post New Message
-    each post in posts
-      .row.justify-content-md-center
-        .col.col-ms-12.col-md-10.col-lg-8.col-xl-6
-          .card.border-primary
-            .card-body
-              h4.card-title= post.title
-              p.card-text= post.content
-              -var date = new Date(post.createdAt)
-
-              span.text-primary= `${date.getMonth() + 1}月${date.getDate()}日 ${('0' + date.getHours()).slice(-2)}:${date.getMinutes()}`
