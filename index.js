@@ -48,7 +48,9 @@ app.post('/create/post', async (req, res) => {
 app.get('/about', function (req, res) {
     res.render('about');
 });
-
+app.get('/resume', function (req, res) {
+    res.render('resume');
+});
 
 app.get('/create/user', async (req, res) => {
     const user = await User.create({

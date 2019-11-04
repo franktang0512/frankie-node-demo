@@ -1,0 +1,112 @@
+body {
+    background-image: url(https://s3-ap-northeast-1.amazonaws.com/wl00887404/resume/geometry2.png);
+    padding: 1em 0;
+  }
+  @media (max-width: 993px) {
+    body {
+      font-size: 16px;
+    }
+  }
+  
+  h2 {
+    font-size: 2em;
+    text-align: center;
+  }
+  
+  .heart {
+    width: 1em;
+  }
+  
+  .with-heart::after {
+    content: "";
+    background-image: url(https://s3-ap-northeast-1.amazonaws.com/wl00887404/resume/like.svg);
+    width: 0.8em;
+    height: 0.8em;
+    display: inline-block;
+    background-size: cover;
+    position: relative;
+    top: 0.15em;
+    left: 0.25em;
+  }
+  
+  .container {
+    border-radius: 4px;
+  }
+  .container > :not(:last-child) {
+    margin-bottom: 1em;
+  }
+  
+  .about {
+    display: grid;
+    grid-template: auto 1fr / auto 1fr;
+    grid-gap: 1em;
+  }
+  
+  .about img {
+    border-radius: 4px;
+    border: none;
+    width: 11em;
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+  .about p {
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+    text-align: justify;
+  }
+  @media (max-width: 876px) {
+    .about {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .about nav {
+      justify-content: center;
+    }
+    .about .nav-brand {
+      display: none;
+    }
+  }
+  
+  .skill .overflow {
+    overflow-x: auto;
+  }
+  .skill .overflow table {
+    min-width: 700px;
+  }
+  .skill .overflow table th {
+    width: 33%;
+  }
+  
+  .experience h3 {
+    font-size: 1.2em;
+  }
+  .experience h3 time {
+    font-size: 0.8em;
+    display: inline-block;
+    margin-left: 0.5rem;
+  }
+  .experience li {
+    line-height: 1.6;
+  }
+  .experience ul li:not(:last-child) {
+    margin-right: 0.5em;
+  }
+  
+  .carousel {
+    /* position: relative; */
+  }
+  .carousel img {
+    border-radius: 4px;
+    border: none;
+    /* position: absolute; */
+    /* top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 1s linear; */
+  }
+  .carousel img.show {
+    opacity: 1;
+  }
